@@ -1,0 +1,8 @@
+{
+    "postCard": {
+        "postId": "Id",
+        "postTitle": "Title ",
+        "postBody": "Body",
+        "postUserId": "UserId"
+    }
+}

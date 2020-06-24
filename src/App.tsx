@@ -13,6 +13,7 @@ import {
   TODOS_ROUTE_PATH
 } from './constants/NavigationConstants'
 import TodosRoute from './routes/TodosRoute'
+import PostRoute from './PostsModule/routes/PostsRoute'
 
 const App = () => {
   return (
@@ -23,10 +24,10 @@ const App = () => {
             <SampleRoute />
           </Route>
           <Route exact path={TODOS_ROUTE_PATH}>
-            <TodosRoute />
+            <PostRoute />
           </Route>
           <Route path={HOME_ROUTE_PATH}>
-            <HomeRoute />
+            <PostRoute />
           </Route>
         </Switch>
       </Router>
