@@ -9,54 +9,53 @@ import PostsStore from '../../stores/PostStore'
 
 import { PostsWrapper } from './styledComponents'
 
-interface PostRouteProps { }
+interface PostRouteProps {}
 
 interface InjectedProps extends PostRouteProps {
-    postsStore: PostsStore
+  postsStore: PostsStore
 }
 
 @inject('postsStore')
 @observer
 class PostsRoute extends Component<PostRouteProps> {
+  constructor(props) {
+    super(props)
+  }
 
-    constructor(props) {
-        super(props)
-    }
+  componentDidMount() {
+    this.getPosts()
+  }
 
-    componentDidMount() {
-        this.getPosts()
-    }
+  getInjectedProps = (): InjectedProps => this.props as InjectedProps
 
-    getInjectedProps = (): InjectedProps => this.props as InjectedProps
+  getPostsStore = (): PostsStore => {
+    return this.getInjectedProps().postsStore
+  }
 
-    getPostsStore = (): PostsStore => {
-        return this.getInjectedProps().postsStore
-    }
+  getPosts = () => {
+    this.getPostsStore().getPosts()
+  }
 
-    getPosts = () => {
-        this.getPostsStore().getPosts()
-    }
+  renderSuccessUI = observer(() => {
+    const { posts } = this.getPostsStore()
+    return (
+      <PostsWrapper>
+        <PostList posts={posts} />
+      </PostsWrapper>
+    )
+  })
 
-    renderSuccessUI = observer(() => {
-        const { posts } = this.getPostsStore()
-        return (
-            <PostsWrapper>
-                <PostList posts={posts} />
-            </PostsWrapper>
-        )
-    })
-
-    render() {
-        const { getPostListAPIError, getPostListAPIStatus } = this.getPostsStore()
-        return (
-            <LoadingWrapperWithFailure
-                apiStatus={getPostListAPIStatus}
-                apiError={getPostListAPIError}
-                onRetry={this.getPosts}
-                renderSuccessUI={this.renderSuccessUI}
-            />
-        )
-    }
+  render() {
+    const { getPostListAPIError, getPostListAPIStatus } = this.getPostsStore()
+    return (
+      <LoadingWrapperWithFailure
+        apiStatus={getPostListAPIStatus}
+        apiError={getPostListAPIError}
+        onRetry={this.getPosts}
+        renderSuccessUI={this.renderSuccessUI}
+      />
+    )
+  }
 }
 
 export default PostsRoute

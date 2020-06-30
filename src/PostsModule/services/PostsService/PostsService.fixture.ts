@@ -5,13 +5,13 @@ import { resolveWithTimeout } from '../../../utils/TestUtils'
 import PostsService from './index'
 
 class PostFixtureService implements PostsService {
-    getPostsAPI() {
-        return resolveWithTimeout(GetPostsResponse)
-    }
+  getPostsAPI() {
+    return resolveWithTimeout(GetPostsResponse)
+  }
 
-    updatePostAPI() {
-        return resolveWithTimeout({})
-    }
+  updatePostAPI() {
+    return resolveWithTimeout({})
+  }
 }
 
 export default PostFixtureService

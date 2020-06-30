@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 
-
 import PostModel from '../../stores/models/PostModel'
 import Strings from '../../i18n/strings/Strings.json'
-
 
 import { TodoWrapper, PostItem, BoldText } from './styledComponents'
 
@@ -14,7 +12,6 @@ type TodoProps = {
 
 @observer
 class Post extends Component<TodoProps> {
-
   render() {
     const { post } = this.props
     const { id, userId, title, body } = post

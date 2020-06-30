@@ -11,31 +11,31 @@ import endpoints from '../endpoints'
 import PostsService from './index'
 
 class PostsApiService implements PostsService {
-    api: Record<string, any>
+  api: Record<string, any>
 
-    constructor() {
-        this.api = create({
-            baseURL: POST_BASE_URL
-        })
-    }
+  constructor() {
+    this.api = create({
+      baseURL: POST_BASE_URL
+    })
+  }
 
-    async getPostsAPI() {
-        return networkCallWithApisauce(
-            this.api,
-            endpoints.todos.todoList,
-            {},
-            apiMethods.get
-        )
-    }
+  async getPostsAPI() {
+    return networkCallWithApisauce(
+      this.api,
+      endpoints.todos.todoList,
+      {},
+      apiMethods.get
+    )
+  }
 
-    async updatePostAPI(requestObject) {
-        return networkCallWithApisauce(
-            this.api,
-            endpoints.todos.updateCompletion,
-            requestObject,
-            apiMethods.post
-        )
-    }
+  async updatePostAPI(requestObject) {
+    return networkCallWithApisauce(
+      this.api,
+      endpoints.todos.updateCompletion,
+      requestObject,
+      apiMethods.post
+    )
+  }
 }
 
 export default PostsApiService
