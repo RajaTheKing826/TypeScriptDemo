@@ -6,7 +6,9 @@ function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component'
 }
 
-function withComponentNameClassComponent<T>(WrappedComponent: React.ComponentType<T>) {
+function withComponentNameClassComponent<T>(
+  WrappedComponent: React.ComponentType<T>
+) {
   return class extends React.Component<T> {
     render() {
       const props = this.props as T
@@ -20,7 +22,9 @@ function withComponentNameClassComponent<T>(WrappedComponent: React.ComponentTyp
   }
 }
 
-function withComponentNameFunctionalComponent<T>(WrappedComponent: React.ComponentType<T>) {
+function withComponentNameFunctionalComponent<T>(
+  WrappedComponent: React.ComponentType<T>
+) {
   const functionalComponent = (props: T) => (
     <HOCWrapper>
       <ComponentName>{getDisplayName(WrappedComponent)}</ComponentName>

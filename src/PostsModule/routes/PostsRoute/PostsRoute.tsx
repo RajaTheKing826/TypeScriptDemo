@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
+import { withTranslation, WithTranslation } from 'react-i18next'
 
 import LoadingWrapperWithFailure from '../../../components/common/LoadingWrapperWithFailure'
 

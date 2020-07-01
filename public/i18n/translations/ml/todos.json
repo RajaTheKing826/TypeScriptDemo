@@ -1,0 +1,13 @@
+{
+  "useCases": {
+    "normal": "సాధారణ",
+    "plural": "బహువచనం",
+    "parametrized": "పారామితీకరణ"
+  },
+  "addTodo": "టోడో జోడించండి",
+  "todosLeft": "టోడో లెఫ్ట్",
+  "todosLeft_plural": "టోడోస్ ఎడమ",
+  "todosLeftParameter": "ఇప్పటికీ {{count}} టోడో ఎడమ",
+  "todosLeftParameter_plural": "ఇప్పటికీ {{count}} టోడోస్ ఎడమ",
+  "todoWithParameter": "టోడో - {{టోడోటెక్స్ట్}}"
+}

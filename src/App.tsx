@@ -11,11 +11,14 @@ import stores from './stores'
 import {
   HOME_ROUTE_PATH,
   SAMPLE_ROUTE_PATH,
-  TODOS_ROUTE_PATH
+  TODOS_ROUTE_PATH,
+  POSTS_ROUTE_PATH,
+  HOC_ROUTE_PATH
 } from './constants/NavigationConstants'
 
 const TodosRoute = lazy(() => import('./routes/TodosRoute'))
-
+const PostsRoute = lazy(() => import('./PostsModule/routes/PostsRoute'))
+const HocRoute = lazy(() => import('./routes/HocRoute'))
 import i18n from './i18n'
 
 const App = () => {
@@ -30,6 +33,12 @@ const App = () => {
               </Route>
               <Route exact path={TODOS_ROUTE_PATH}>
                 <TodosRoute />
+              </Route>
+              <Route exact path={HOC_ROUTE_PATH}>
+                <HocRoute />
+              </Route>
+              <Route exact path={POSTS_ROUTE_PATH}>
+                <PostsRoute />
               </Route>
               <Route path={HOME_ROUTE_PATH}>
                 <HomeRoute />

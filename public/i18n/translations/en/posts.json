@@ -1,0 +1,6 @@
+{
+  "language": "English",
+  "title": "POSTS",
+  "postsCountParameter": "Total {{count}} post is there",
+  "postsCountParameter_plural": "Total {{count}} posts are there"
+}
