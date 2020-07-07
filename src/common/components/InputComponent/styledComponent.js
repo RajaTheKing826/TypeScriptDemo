@@ -4,4 +4,7 @@ export const StyledInput = styled.input`
   ${tw`p-2 text-xl  border `};
   border: 2px solid
     ${props => (props.errorMessage === 'error Message' ? 'red' : 'gray')};
+  :focus {
+    background-color: red;
+  }
 `

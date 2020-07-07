@@ -24,6 +24,8 @@
     "postcss-cli": "7.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-hover": "1.4.0",
+    "react-hover-animation": "2.1.1",
     "react-i18next": "11.7.0",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.0",

@@ -5,6 +5,7 @@ import { I18nextProvider } from 'react-i18next'
 
 import HomeRoute from './routes/HomeRoute'
 import SampleRoute from './routes/SampleRoute'
+import ImagesRoute from './routes/ImagesRoute'
 
 import stores from './stores'
 
@@ -13,7 +14,8 @@ import {
   SAMPLE_ROUTE_PATH,
   TODOS_ROUTE_PATH,
   POSTS_ROUTE_PATH,
-  HOC_ROUTE_PATH
+  HOC_ROUTE_PATH,
+  IMAGES_ROUTE_PATH
 } from './constants/NavigationConstants'
 
 const TodosRoute = lazy(() => import('./routes/TodosRoute'))
@@ -34,8 +36,12 @@ const App = () => {
               <Route exact path={TODOS_ROUTE_PATH}>
                 <TodosRoute />
               </Route>
+
               <Route exact path={HOC_ROUTE_PATH}>
                 <HocRoute />
+              </Route>
+              <Route exact path={IMAGES_ROUTE_PATH}>
+                <ImagesRoute />
               </Route>
               <Route exact path={POSTS_ROUTE_PATH}>
                 <PostsRoute />

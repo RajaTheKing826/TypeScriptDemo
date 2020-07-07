@@ -16,12 +16,13 @@ class InputComponent extends Component {
   }
 
   onChangeFunction = e => {
-    const { onChangeFunction } = this.props
-    onChangeFunction(e)
+    // console.log(this.props)
+    // const { onChangeFunction } = this.props
+    this.props.onChangeFunction(e)
   }
 
   render() {
-    const { validateUserName, text } = this.props
+    const { validateUserName, text, forwardRef } = this.props
     return (
       <StyledInput
         type='text'
@@ -29,6 +30,7 @@ class InputComponent extends Component {
         errorMessage={this.errorMessage}
         onBlur={() => this.validateFunction()}
         onChange={this.onChangeFunction}
+        ref={forwardRef}
       />
     )
   }
